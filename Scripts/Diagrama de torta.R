@@ -1,8 +1,7 @@
 library("ggplot2")  
-library(readxl)
+library("readxl")
 library("dplyr")    
-library("grid")
-library("png")
+
 data=read_excel(choose.files())
 data=data.frame(data[1:300])
 names(data)
