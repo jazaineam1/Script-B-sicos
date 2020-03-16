@@ -1,6 +1,6 @@
 library("ggplot2")  
 library(readxl)
-library("dplyr")    # Data manipulation
+library("dplyr")    
 library("grid")
 library("png")
 data=read_excel(choose.files())
@@ -33,10 +33,7 @@ for (i in 1:n.Color){
 }
 
 ###########################################################################
-library(RCurl)
-myurl <- "https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/Logo/Jazm.png"
-my_image <-  readPNG(getURLContent(myurl))
-marca <- rasterGrob(my_image, interpolate=T,height=unit(3, "cm"),hjust=-1.55, vjust=2.4)
+
 p=ggplot(count.data, aes(x = "", y = prop, fill = Grupo)) +
   geom_bar(width = 1, stat = "identity", color = "white") +
   coord_polar("y", start = 0)+
