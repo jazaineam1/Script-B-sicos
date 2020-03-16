@@ -3,7 +3,7 @@ library("readxl")
 library("dplyr")    
 
 data=read_excel(choose.files())
-data=data.frame(data[1:300])
+data=data.frame(data)
 names(data)
 attach(data)
 ###########################################################################
