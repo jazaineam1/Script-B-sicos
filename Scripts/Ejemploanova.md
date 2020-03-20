@@ -17,9 +17,9 @@ library(agricolae)
 
 ## Ejemplo 
 
-Para nuestro ejemplo usaremos una base de datos que tiene informaciÛn sociodemogr·fica de 173 paÌses del mundo, tendremos en cuenta las variables "continent"  y "employrate", nuestro interÈs ser· verificar si hay diferencias en las tasas de empleo medio categorizando los continentes. 
+Para nuestro ejemplo usaremos una base de datos que tiene informaci√≥n sociodemogr√°fica de 173 pa√≠ses del mundo, tendremos en cuenta las variables "continent"  y "employrate", nuestro inter√©s ser√° verificar si hay diferencias en las tasas de empleo medio categorizando los continentes. 
 
-Primero cargaremos las librerÌas necesarias y cargaremos la base de datos
+Primero cargaremos las librer√≠as necesarias y cargaremos la base de datos
 
 ```{r}
 data.world <- read.csv2("https://raw.githubusercontent.com/shhschilling/statistikUmweltingenieure/master/data/gapC.csv",sep=",",dec=".")
@@ -29,10 +29,10 @@ attach(data.world)
 names(data.world)
 ```
 
-Nuestro problema es tomar la decisiÛn frente a la siguiente prueba de hipÛtesis
+Nuestro problema es tomar la decisi√≥n frente a la siguiente prueba de hip√≥tesis
 $$
 H_0: \mu_{AF}=\mu_{EE}=\mu_{WE}=\mu_{OC}=\mu_{AS}=\mu_{LATAM}=\mu_{NORAM}\\
-H_a: al menos una es diferente a las dem·s
+H_a: al menos una es diferente a las dem√°s
 $$
 Inicialmente veremos el comportamiento de manera descriptiva.
 
@@ -113,10 +113,10 @@ autoplot(acf(anova$residuals, plot = FALSE))
 ```
 
 
-## Comparaciones m˙ltiples
+## Comparaciones m√∫ltiples
 
 
-Ahora nuestro interÈs ser· determinar y caracterizar el comportamiento de las tasas de empleo por continente, es decir saber cual es el orden de los continentes teniendo en cuenta a esa variable. Para esto usaremos los test de comparaciones m˙ltiples
+Ahora nuestro inter√©s ser√° determinar y caracterizar el comportamiento de las tasas de empleo por continente, es decir saber cual es el orden de los continentes teniendo en cuenta a esa variable. Para esto usaremos los test de comparaciones m√∫ltiples
 
 ```{r}
 LSD.compa=LSD.test(anova,"continent",alpha = 0.05)
@@ -133,6 +133,6 @@ plot(HSD.compa,variation = "SD")
 
 ## Ejercicio 
 
-1. Investigar y realizar las comparaciones m˙ltiples usando el mÈtodo de Dunnett y el de Bonferroni  para nuestro ejemplo.
+1. Investigar y realizar las comparaciones m√∫ltiples usando el m√©todo de Dunnett y el de Bonferroni  para nuestro ejemplo.
 
-2. Investigar las diferencias entre los mÈtodos de comaraciones m˙ltiples
+2. Investigar las diferencias entre los m√©todos de comaraciones m√∫ltiples
